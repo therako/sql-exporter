@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "V1a5/Ra9HXKNuArt5WKUqu+Jxt8=",
+			"path": "github.com/lib/pq",
+			"revision": "b2004221932bd6b13167ef654c81cffac36f7537",
+			"revisionTime": "2018-03-19T19:41:35Z"
+		},
+		{
+			"checksumSHA1": "AU3fA8Sm33Vj9PBoRPSeYfxLRuE=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "b2004221932bd6b13167ef654c81cffac36f7537",
+			"revisionTime": "2018-03-19T19:41:35Z"
+		}
+	],
+	"rootPath": "github.com/therako/sql-exporter"
+}
