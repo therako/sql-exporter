@@ -38,7 +38,7 @@ func Export(config Config) {
 	var w sync.WaitGroup
 	w.Add(config.Concurrency)
 	for i := 1; i <= config.Concurrency; i++ {
-		file, err := os.Create(fmt.Sprintf("%s_%v.txt", config.OutputFile, i))
+		file, err := os.Create(fmt.Sprintf("%s-%d.txt", config.OutputFile, i))
 		if err != nil {
 			log.Fatal("Cannot create file", err)
 		}
@@ -65,7 +65,7 @@ func Export(config Config) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	for i := 1; i <= noWorker; i++ {
+	for i := 1; i <= config.Concurrency; i++ {
 		w.Done()
 	}
 	close(chanVals)
