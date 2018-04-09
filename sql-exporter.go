@@ -49,9 +49,13 @@ func Export(config Config) {
 				for i, col := range cols {
 					m[col] = rows.RowData[i]
 				}
-				obj, _ := json.Marshal(m)
-				filePointer.Write(obj)
-				filePointer.Write([]byte("\n"))
+				if m != nil {
+					obj, err := json.Marshal(m)
+					if err == nil {
+						filePointer.Write(obj)
+						filePointer.Write([]byte("\n"))
+					}
+				}
 			}
 		}(chanVals, file)
 	}
