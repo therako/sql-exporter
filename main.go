@@ -2,11 +2,12 @@ package main
 
 import (
 	"flag"
+	"github.com/therako/sql-exporter/exporter"
 	"os"
 )
 
 func main() {
-	var config Config
+	var config exporter.Config
 	flag.StringVar(&config.SqlBind, "conn", "", "Text to parse. (Required)")
 	flag.StringVar(&config.SqlDriver, "driver", "postgres", "Metric {postgres|mysql};. (Default: postgres)")
 	flag.StringVar(&config.Query, "query", "", "Sql Query. (Required)")
@@ -24,5 +25,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	Export(config)
+	exporter.Export(config)
 }

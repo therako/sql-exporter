@@ -1,4 +1,4 @@
-package main
+package exporter
 
 type Config struct {
 	SqlBind     string
